@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginScreen"
-    android:background="#ffffff">
+    android:background="@drawable/background">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="#ffffff"
-        app:layout_constraintGuide_begin="290dp"/>
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="365dp" />
 
     <EditText
         android:id="@+id/login_user"
@@ -24,6 +24,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/edit_text_style"
+        android:alpha="1"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -62,6 +63,7 @@
         android:background="@drawable/button_style"
         android:text="Login"
         android:textColor="@color/colorPrimary"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,8 +81,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_style"
-        android:text="Register"
+        android:text="Sign Up"
         android:textColor="@color/colorPrimary"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +93,7 @@
     <ImageView
 
 
-        android:id="@+id/ass"
+        android:id="@+id/image"
         android:layout_width="131dp"
         android:layout_height="78dp"
         android:layout_marginStart="8dp"
@@ -105,6 +108,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.585"
-        app:srcCompat="@drawable/pinnitfull"/>
+        app:srcCompat="@color/colorAccent"/>
 
 </android.support.constraint.ConstraintLayout>

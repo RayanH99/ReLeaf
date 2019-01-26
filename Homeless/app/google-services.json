@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "553315835666",
+    "firebase_url": "https://donate-a15b0.firebaseio.com",
+    "project_id": "donate-a15b0",
+    "storage_bucket": "donate-a15b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553315835666:android:df0c88078605d98f",
+        "android_client_info": {
+          "package_name": "com.example.johnnybahama.homeless"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553315835666-lkro1mo3sot3p7n5jgtr1oi1l6n0da14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.johnnybahama.homeless",
+            "certificate_hash": "3ab979f7b6859cf1bc06025fb0a42422d2d329fd"
+          }
+        },
+        {
+          "client_id": "553315835666-6ulor78che9ibi68ll5hh51cf65hqlkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuPE0jU5IHMKs8CsB00iUu5RwYVDPi0TQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553315835666-6ulor78che9ibi68ll5hh51cf65hqlkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

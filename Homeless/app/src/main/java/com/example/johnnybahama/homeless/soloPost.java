@@ -11,13 +11,12 @@ public class soloPost {
     private String ID;
 
 
-    public soloPost(int price, int point, int numRequired, int numDonated, String name, String description, String ID){
+    public soloPost(int price, int point, int numRequired, int numDonated, String name){
         this.price = price;
         this.point = point;
         this.numRequired = numRequired;
         this.numDonated = numDonated;
         this.name = name;
-        this.description = description;
 
     }
 

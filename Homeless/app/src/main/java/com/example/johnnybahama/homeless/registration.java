@@ -47,6 +47,9 @@ public class registration extends AppCompatActivity {
                 } else {    // creates a new profile object if none of them are null
                     profileObject newProfile = new profileObject(firstName.getText().toString(),
                             lastName.getText().toString(), email.getText().toString());
+                    // activates toast to let user know an account has been created successfully
+                    Toast.makeText(getApplicationContext(), "Account successfully created!",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -12,6 +12,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 public class MapsView extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -21,6 +23,8 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
     private Marker shelter3;
     private Shelter ass;
     private CustomInfoWindowGoogleMap customInfoWindow = new CustomInfoWindowGoogleMap(this);
+    private ArrayList<Marker> modelMarkers = new ArrayList<Marker>();
+
 
 
 

@@ -53,8 +53,9 @@ public class Shelter {
         this.name = name ;
     }
 
-
-
+    public int getNumPosts() {
+        return numPosts;
+    }
 
     public void setLocation(Double lat, Double lng) {
         this.lat = lat;

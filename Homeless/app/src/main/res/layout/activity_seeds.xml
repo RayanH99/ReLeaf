@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/seedCount" />
 
     <ListView
-        android:id="@+id/milestoneDivider"
+        android:id="@+id/beansDivider"
         android:layout_width="220dp"
         android:layout_height="1dp"
         android:layout_marginStart="92dp"
@@ -81,7 +81,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/milestoneDivider" />
+        app:layout_constraintTop_toBottomOf="@+id/beansDivider" />
 
     <ImageView
         android:id="@+id/bronzeSeed"

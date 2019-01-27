@@ -140,8 +140,8 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
             currenPrefEditor.putString("oldoralbtoothbrushes", String.valueOf("0"));
             currenPrefEditor.apply();
 
-            Toast notLongError = Toast.makeText(getApplicationContext(), "Loaded new Cart", Toast.LENGTH_SHORT);
-            notLongError.show();
+//            Toast notLongError = Toast.makeText(getApplicationContext(), "Loaded new Cart", Toast.LENGTH_SHORT);
+//            notLongError.show();
            // currentLatLng = new LatLng(currentLat, currentLng);
         }
 

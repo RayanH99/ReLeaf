@@ -15,11 +15,8 @@
         android:roundIcon="@mipmap/releaf_launch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".viewList2"></activity>
-=======
         <activity android:name=".CartView"></activity>
->>>>>>> develop
         <activity android:name=".paymentMethod" />
         <activity android:name=".MapsView" />
         <!--

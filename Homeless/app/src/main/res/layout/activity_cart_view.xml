@@ -13,7 +13,7 @@
         android:orientation="vertical"
 
         tools:context="MapsView"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="34dp"
         tools:layout_editor_absoluteY="0dp">
 
         <android.support.constraint.ConstraintLayout
@@ -21,49 +21,94 @@
             android:layout_height="670dp">
 
             <TextView
+                android:id="@+id/beanText"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="5"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/heinzBeansCosts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.661"
+                app:layout_constraintStart_toEndOf="@+id/beansEntry"
+                app:layout_constraintTop_toTopOf="@+id/topDivider" />
+
+            <TextView
+                android:id="@+id/fundText"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="75"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/FundDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.643"
+                app:layout_constraintStart_toEndOf="@+id/beansEntry"
+                app:layout_constraintTop_toTopOf="@+id/brushDivider" />
+
+            <TextView
                 android:id="@+id/goalEntry"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Goal: Fund Rennovation"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/goalCost"
                 app:layout_constraintStart_toEndOf="@+id/goalClipart"
-                app:layout_constraintTop_toBottomOf="@+id/woolBlanketEntry" />
+                app:layout_constraintTop_toBottomOf="@+id/toothbrushClipart" />
 
             <ImageView
                 android:id="@+id/goalClipart"
                 android:layout_width="37dp"
                 android:layout_height="42dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/goalCost"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/woolBlanketsClipart"
+                app:layout_constraintTop_toTopOf="@+id/goalCost"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/goal_clipart" />
 
             <TextView
                 android:id="@+id/goalCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:text="$232 / $1,000 Target"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/fundText"
+                app:layout_constraintHorizontal_bias="0.042"
                 app:layout_constraintStart_toEndOf="@+id/goalClipart"
-                app:layout_constraintTop_toBottomOf="@+id/goalEntry" />
+                tools:layout_editor_absoluteY="470dp" />
 
             <ListView
                 android:id="@+id/goalDivider"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="#d3d3d3"
+                app:layout_constraintBottom_toBottomOf="@+id/toothbrushCosts"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/goalCost" />
+                app:layout_constraintTop_toBottomOf="@+id/bananaEntry" />
 
             <TextView
                 android:id="@+id/companyName"
@@ -189,13 +234,13 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="40dp"
                 android:text="Total Donation:"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button"
-                app:layout_constraintHorizontal_bias="0.216"
+                app:layout_constraintHorizontal_bias="0.088"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -239,6 +284,7 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="5dp"
                 android:background="#d3d3d3"
+                app:layout_constraintBottom_toTopOf="@+id/bananaClipart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/woolBlanketCost" />
 
@@ -250,17 +296,17 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="24dp"
                 android:background="@drawable/button_style"
                 android:text="Check Out"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.834"
+                app:layout_constraintHorizontal_bias="0.874"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/pastaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -268,18 +314,18 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="# of beans"
+                android:layout_marginBottom="12dp"
+                android:text="10"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toTopOf="@+id/pastaEntry"
+                app:layout_constraintBottom_toBottomOf="@+id/barillaPastaCost"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.541"
+                app:layout_constraintHorizontal_bias="0.697"
                 app:layout_constraintStart_toEndOf="@+id/beansEntry"
-                app:layout_constraintTop_toTopOf="@+id/beansEntry"
-                app:layout_constraintVertical_bias="0.37" />
+                app:layout_constraintTop_toBottomOf="@+id/beanText"
+                app:layout_constraintVertical_bias="0.809" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/blanketText"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginStart="8dp"
@@ -288,34 +334,16 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="# of pasta"
+                android:text="2"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toTopOf="@+id/woolBlanketEntry"
+                app:layout_constraintBottom_toTopOf="@+id/blanketDivider"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.633"
-                app:layout_constraintStart_toEndOf="@+id/beansEntry"
-                app:layout_constraintTop_toTopOf="@+id/pastaEntry" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="# of blankets"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toTopOf="@+id/goalEntry"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.629"
+                app:layout_constraintHorizontal_bias="0.661"
                 app:layout_constraintStart_toEndOf="@+id/beansEntry"
                 app:layout_constraintTop_toTopOf="@+id/woolBlanketEntry" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/brushText"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginStart="8dp"
@@ -324,14 +352,154 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="amount"
+                android:text="50"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/goalDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.643"
                 app:layout_constraintStart_toEndOf="@+id/beansEntry"
-                app:layout_constraintTop_toTopOf="@+id/goalEntry"
-                app:layout_constraintVertical_bias="0.523" />
+                app:layout_constraintTop_toTopOf="@+id/goalEntry" />
+
+            <TextView
+                android:id="@+id/bananaText"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="12"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bananaCost"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.697"
+                app:layout_constraintStart_toEndOf="@+id/beansEntry"
+                app:layout_constraintTop_toTopOf="@+id/blanketDivider" />
+
+            <TextView
+                android:id="@+id/bananaEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Del Monte Banana"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/bananaClipart"
+                app:layout_constraintTop_toBottomOf="@+id/woolBlanketEntry" />
+
+            <TextView
+                android:id="@+id/bananaEntry2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Toothbrush"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toothbrushCosts"
+                app:layout_constraintStart_toEndOf="@+id/bananaClipart"
+                app:layout_constraintTop_toBottomOf="@+id/bananaCost"
+                app:layout_constraintVertical_bias="0.526" />
+
+            <ImageView
+                android:id="@+id/bananaClipart"
+                android:layout_width="37dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/woolBlanketsClipart"
+                app:srcCompat="@drawable/banana_clipart" />
+
+            <TextView
+                android:id="@+id/bananaCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="$3.47"
+                android:textColor="#0000cd"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/bananaClipart"
+                app:layout_constraintTop_toBottomOf="@+id/bananaEntry" />
+
+
+            <ImageView
+                android:id="@+id/toothbrushClipart"
+                android:layout_width="37dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/goalClipart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bananaCost"
+                app:layout_constraintVertical_bias="0.322"
+                app:srcCompat="@drawable/toothbrush_clipart" />
+
+            <TextView
+                android:id="@+id/toothbrushCosts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:text="$1.77"
+                android:textColor="#0000cd"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/goalEntry"
+                app:layout_constraintStart_toEndOf="@+id/toothbrushClipart"
+                app:layout_constraintTop_toTopOf="@+id/toothbrushClipart"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ListView
+                android:id="@+id/brushDivider"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:background="#d3d3d3"
+                app:layout_constraintBottom_toTopOf="@+id/goalClipart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toothbrushCosts" />
+
+            <ListView
+                android:id="@+id/FundDivider"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:background="#d3d3d3"
+                app:layout_constraintBottom_toTopOf="@+id/companyRequests"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/goalClipart"
+                app:layout_constraintVertical_bias="0.157" />
+
+            <TextView
+                android:id="@+id/sumView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="TextView"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintHorizontal_bias="0.088"
+                app:layout_constraintStart_toEndOf="@+id/companyRequests"
+                app:layout_constraintTop_toBottomOf="@+id/FundDivider"
+                app:layout_constraintVertical_bias="0.737" />
 
         </android.support.constraint.ConstraintLayout>
 

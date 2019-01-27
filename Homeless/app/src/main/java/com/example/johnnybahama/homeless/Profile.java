@@ -12,6 +12,7 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        overridePendingTransition(17432576, 17432576);
 
         final TextView seedsButton = findViewById(R.id.seedCount);
         seedsButton.setOnClickListener(new View.OnClickListener() {

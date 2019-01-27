@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.Interpolator;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -17,10 +18,10 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-//import com.google.firebase.database.DataSnapshot;
-//import com.google.firebase.database.DatabaseError;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -110,54 +111,41 @@ public class MapFunctions {
         return resizedBitmap;
     }
 
-//    public static void loadPins (final GoogleMap gMap, final int mapRadius, final double currentLat, final double currentLng, final Date currentDate, final String viewSort, CustomInfoWindowGoogleMap customInfoWindow, final ArrayList<Marker> modelMarkers, final Context currentContext){
-//        gMap.clear();
-//        gMap.setInfoWindowAdapter(customInfoWindow);
-//        gMap.addCircle(new CircleOptions().center(new LatLng(currentLat, currentLng))
-//                .radius(mapRadius)
-//                .strokeWidth(100.0f)
-//                .fillColor(0x220000FF)
-//                .strokeColor(Color.GRAY));
-//
-//        FirebaseDatabase.getInstance().getReference().child("Pins")
-//                .addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//
-//                            LatLng MLatLng = new LatLng(Double.parseDouble(snapshot.child("lat").getValue().toString()), Double.parseDouble(snapshot.child("lng").getValue().toString()));
-//                            String MTitle = snapshot.child("body").getValue().toString();
-//                            String MBody = snapshot.child("title").getValue().toString();
-//                            String MPostType = snapshot.child("postType").getValue().toString();
-//                            String MPoster = snapshot.child("originalPoster").getValue().toString();
-//                            Date MDate = new Date();
-//                            MDate.setHours(Integer.valueOf(snapshot.child("date").child("hours").getValue().toString()));
-//                            MDate.setDate(Integer.valueOf(snapshot.child("date").child("date").getValue().toString()));
-//                            MDate.setMonth(Integer.valueOf(snapshot.child("date").child("month").getValue().toString()));
-//                            int MLikes = Integer.parseInt(snapshot.child("likes").getValue().toString());
-//                            String MID = snapshot.getKey();
-//                            //  String MDate = snapshot.child("date").getValue().toString();
-//                            int MWidth = MapFunctions.generateWidth(currentDate, MDate, MLikes, "date");
-//
-//                            int daysSince = MapFunctions.getOldness(currentDate, MDate);
-//                            Pin dummyPin = new Pin(MDate, MBody, MTitle, MLatLng.latitude, MLatLng.longitude, MPostType, MPoster, MLikes, MID);
-//                            if(MPostType.equals(viewSort) || viewSort.equals("All") ) {
-//
-//                                Marker placeHolderPin = gMap.addMarker(new MarkerOptions().position(MLatLng).title(MTitle).snippet(MBody).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons(MPostType,MWidth, MWidth, currentContext))));
-//                                modelMarkers.add(placeHolderPin);
-//                                if(MapFunctions.calculateDistance(MLatLng.latitude,MLatLng.longitude, currentLat, currentLng) > mapRadius){
-//                                    placeHolderPin.setAlpha(0.4f);
-//                                }
-//                                MapFunctions.dropPinEffect(placeHolderPin);
-//                                placeHolderPin.setTag(dummyPin);
-//                            }
-//                        }
-//                    }
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//                    }
-//                });
-//    }
+    public static void loadShelters (final GoogleMap gMap, final double currentLat, final double currentLng, CustomInfoWindowGoogleMap customInfoWindow, final Context currentContext){
+        gMap.clear();
+        gMap.setInfoWindowAdapter(customInfoWindow);
+
+        FirebaseDatabase.getInstance().getReference().child("Shelters")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+
+                    @Override
+
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Toast notLongError = Toast.makeText(currentContext, "Just double dookied ", Toast.LENGTH_LONG);
+                        notLongError.show();
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                            LatLng MLatLng = new LatLng(Double.parseDouble(snapshot.child("lat").getValue().toString()), Double.parseDouble(snapshot.child("lng").getValue().toString()));
+                            String MName = snapshot.child("name").getValue().toString();
+                            String MDescription = snapshot.child("description").getValue().toString();
+                            int MNumPosts = Integer.parseInt(snapshot.child("numPosts").getValue().toString());
+
+
+
+
+                            Shelter dummyShelter = new Shelter(MLatLng.latitude, MLatLng.longitude, MName, MNumPosts, MDescription);
+
+                                Marker placeHolderPin = gMap.addMarker(new MarkerOptions().position(MLatLng).title(MName).snippet(MDescription).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons("temppin", MNumPosts, MNumPosts, currentContext))));
+                                MapFunctions.dropPinEffect(placeHolderPin);
+                                placeHolderPin.setTag(dummyShelter);
+
+                        }
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
+    }
 
 
 }

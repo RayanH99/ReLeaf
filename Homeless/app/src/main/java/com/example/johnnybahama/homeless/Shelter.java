@@ -26,13 +26,13 @@ public class Shelter {
     //private ArrayList<Comment> comments = new ArrayList<Comment>();
 
 
-    public Shelter(Double lat, Double lng, String name, int numPosts, String description, String ID){
+    public Shelter(Double lat, Double lng, String name, int numPosts, String description){
         this.lat = lat;
         this.lng = lng;
         this.description = description;
         this.name = name;
         this.numPosts = numPosts;
-        this.ID = ID;
+
     }
 
 

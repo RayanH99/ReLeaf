@@ -6,29 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Profile extends AppCompatActivity {
+public class paymentMethod extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_payment_method);
         overridePendingTransition(17432576, 17432576);
-
-        final TextView seedsButton = findViewById(R.id.seedCount);
-        seedsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(Profile.this, SeedsActivity.class);
-                Profile.this.startActivity(myIntent);
-            }
-        });
 
         final TextView paymentMethodButton = findViewById(R.id.paymentHeading);
         paymentMethodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(Profile.this, paymentMethod.class);
-                Profile.this.startActivity(myIntent);
+                Intent myIntent = new Intent(paymentMethod.this, Profile.class);
+                paymentMethod.this.startActivity(myIntent);
             }
         });
     }

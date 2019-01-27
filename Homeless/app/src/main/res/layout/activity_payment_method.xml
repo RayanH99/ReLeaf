@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".paymentMethod">
+
+    <ImageView
+        android:id="@+id/returnButton"
+        android:layout_width="45dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/return_arrow_clipart" />
+
+    <ImageView
+        android:id="@+id/profilePictureClipart"
+        android:layout_width="131dp"
+        android:layout_height="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileHeading"
+        app:srcCompat="@drawable/profile_picture_clipart" />
+
+    <TextView
+        android:id="@+id/profileHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Profile"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/paymentHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Payment Methods"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePictureClipart" />
+
+    <ImageView
+        android:id="@+id/visaClipart"
+        android:layout_width="56dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentHeading"
+        app:srcCompat="@drawable/visa_clipart" />
+
+    <TextView
+        android:id="@+id/visaNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="348dp"
+        android:text="**** **** 2340"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/visaClipart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mastercardClipart"
+        android:layout_width="74dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visaClipart"
+        app:srcCompat="@drawable/mastercard_clipart" />
+
+    <TextView
+        android:id="@+id/mastercardNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="40dp"
+        android:text="**** **** 9784"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/mastercardClipart"
+        app:layout_constraintTop_toBottomOf="@+id/visaNumbers" />
+
+    <TextView
+        android:id="@+id/addPaymentHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="248dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Add Payment Method"
+        android:textColor="#0000cd"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePictureClipart" />
+</android.support.constraint.ConstraintLayout>

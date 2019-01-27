@@ -3,7 +3,7 @@ package com.example.johnnybahama.homeless;
 
 import android.location.Location;
 
-import com.google.android.gms.maps.model.LatLng;
+//import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 
@@ -104,7 +104,7 @@ public class Shelter {
     public ArrayList<com.example.johnnybahama.homeless.soloPost> getSoloPost() {
         return soloPost;
     }
-
+/*
     public boolean isInRegion(LatLng middleScreen, int radius){
 //        if(thisproperty == false)return false
 
@@ -116,7 +116,7 @@ public class Shelter {
         }
         return false;
 
-    }
+    }*/
 
 
 }

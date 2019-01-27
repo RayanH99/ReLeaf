@@ -31,6 +31,7 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
     private Marker shelter3;
     private Shelter ass;
     private ImageView checkout;
+    private ImageView profile;
     private Context currentContext = this;
     DatabaseReference databasePins;
 
@@ -45,16 +46,23 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_maps_view);
+        overridePendingTransition(17432576, 17432576);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
+
+
         databasePins = FirebaseDatabase.getInstance().getReference("Shelters");
 
 
         checkout = findViewById(R.id.imageView13);
+        profile = findViewById(R.id.imageView9);
+
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +71,21 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
                 String pinID = databasePins.push().getKey();
                 Shelter pin = new Shelter(20.0,20.0,"ass",20,"REpooo");
                 databasePins.child(pinID).setValue(pin);
+
+//                Toast notLongError = Toast.makeText(currentContext, "Just shitted", Toast.LENGTH_LONG);
+//                notLongError.show();
+
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent goToNewPin = new Intent(MapsView.this, Profile.class);
+           //     goToNewPin.putExtra("Shelter", ((Shelter) marker.getTag()).getName());
+                startActivity(goToNewPin);
 
 //                Toast notLongError = Toast.makeText(currentContext, "Just shitted", Toast.LENGTH_LONG);
 //                notLongError.show();
@@ -97,18 +120,36 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
         MapFunctions.loadShelters(mMap,currentLatLng.latitude, currentLatLng.longitude,customInfoWindow,this);
 
       //  shelter1 = mMap.addMarker(new MarkerOptions().position(new LatLng(43.260827,-79.922391)).title("The Doo Doo Society").draggable(false).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons("temppin", 200, 200, this))));
-        shelter2 = mMap.addMarker(new MarkerOptions().position(new LatLng(43.260767,-79.928871)).title("REEEEE").draggable(false).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons("temppin", 300, 300, this))));
-        shelter3 = mMap.addMarker(new MarkerOptions().position(new LatLng(43.265267,-79.922971)).title("Csadsadlick Here to add details").draggable(false).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons("temppin", 400, 400, this))));
+  //      shelter2 = mMap.addMarker(new MarkerOptions().position(new LatLng(43.260767,-79.928871)).title("REEEEE").draggable(false).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons("temppin", 300, 300, this))));
+//        shelter3 = mMap.addMarker(new MarkerOptions().position(new LatLng(43.265267,-79.922971)).title("Csadsadlick Here to add details").draggable(false).icon(BitmapDescriptorFactory.fromBitmap(MapFunctions.resizeMapIcons("temppin", 400, 400, this))));
 
 //        shelter1.setTag(ass);
-        shelter2.setTag(ass);
-        shelter3.setTag(ass);
+  //      shelter2.setTag(ass);
+//        shelter3.setTag(ass);
 
      //   MapFunctions.dropPinEffect(shelter1);
-        MapFunctions.dropPinEffect(shelter2);
-        MapFunctions.dropPinEffect(shelter3);
+    //    MapFunctions.dropPinEffect(shelter2);
+      //  MapFunctions.dropPinEffect(shelter3);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15));
 
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+
+                Intent goToNewPin = new Intent(MapsView.this, ListView.class);
+                goToNewPin.putExtra("Shelter", ((Shelter) marker.getTag()).getName());
+                startActivity(goToNewPin);
+
+
+
+
+            }
+        });
+
+
+
     }
+
+
 }

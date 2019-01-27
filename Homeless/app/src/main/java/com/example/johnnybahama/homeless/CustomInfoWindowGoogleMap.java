@@ -36,18 +36,18 @@ public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter {
         TextView poster_tv = view.findViewById(R.id.poster);
 
         name_tv.setText(marker.getTitle());
-        details_tv.setText(marker.getSnippet());
+        likes_tv.setText(marker.getSnippet());
 
         Shelter infoPin = (Shelter) marker.getTag();
-        String date = "POOPPPEEEEEDOOOPOEEE";
+      //  String date = "POOPPPEEEEEDOOOPOEEE";
 //
 //        int imageId = context.getResources().getIdentifier(infoPin.getImage().toLowerCase(),
 //                "drawable", context.getPackageName());
 //        img.setImageResource(imageId);
 
-        likes_tv.setText("Number of likes is " + infoPin.getNumPosts());
-        date_tv.setText(String.valueOf(infoPin.getDescription()));
-        poster_tv.setText("Posted By "+ infoPin.getName());
+        details_tv.setText("");
+        date_tv.setText("Number of donators is " + infoPin.getNumPosts());
+        poster_tv.setText("");
 
         return view;
     }

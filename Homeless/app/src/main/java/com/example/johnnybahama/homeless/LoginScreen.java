@@ -32,6 +32,7 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         mAuth = FirebaseAuth.getInstance();
+        overridePendingTransition(17432576,17432576 );
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);

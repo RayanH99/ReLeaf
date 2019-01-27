@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/releaf_launch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".paymentMethod"></activity>
+        <activity android:name=".CartView"></activity>
+        <activity android:name=".paymentMethod" />
         <activity android:name=".MapsView" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

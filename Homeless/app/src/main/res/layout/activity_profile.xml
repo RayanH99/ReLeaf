@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
     <ListView
-        android:id="@+id/milestoneDivider"
+        android:id="@+id/beansDivider"
         android:layout_width="325dp"
         android:layout_height="1dp"
         android:layout_marginStart="70dp"

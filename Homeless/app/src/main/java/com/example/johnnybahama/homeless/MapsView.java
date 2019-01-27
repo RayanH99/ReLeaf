@@ -2,6 +2,7 @@ package com.example.johnnybahama.homeless;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,17 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
     private ImageView checkout;
     private ImageView profile;
     private Context currentContext = this;
+    private SharedPreferences currentPrefs;
+
     DatabaseReference databasePins;
+
+    private int woolblankets;
+    private int barrillapasta;
+    private int oralbtoothbrushes;
+    private int delmontebanana;
+
+    private int beans;
+    private int renovation;
 
 
     private CustomInfoWindowGoogleMap customInfoWindow = new CustomInfoWindowGoogleMap(this);
@@ -53,6 +64,86 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        currentPrefs = getSharedPreferences("prefID", Context.MODE_PRIVATE);
+        SharedPreferences.Editor currenPrefEditor = currentPrefs.edit();
+
+
+
+
+        Intent retrievecart= getIntent();
+        if(retrievecart.getExtras() != null){
+
+            if(retrievecart.getExtras().get("Shelter").equals("Mission Services")){
+
+                beans = Integer.valueOf(retrievecart.getExtras().getString("beans"));
+                woolblankets = Integer.valueOf(retrievecart.getExtras().getString("woolblankets"));
+                barrillapasta = Integer.valueOf(retrievecart.getExtras().getString("barrillapasta"));
+                renovation = Integer.valueOf(retrievecart.getExtras().getString("renovation"));
+
+                int oldbeans = Integer.valueOf(currentPrefs.getString("beans","nobeans"));
+                int oldwoolblankets = Integer.valueOf(currentPrefs.getString("woolblankets","nobeans"));
+                int oldbarrillapasta = Integer.valueOf(currentPrefs.getString("barrillapasta","nobeans"));
+                int oldrenovation = Integer.valueOf(currentPrefs.getString("renovation","nobeans"));
+
+                currenPrefEditor.putString("beans", String.valueOf(beans + oldbeans));
+                currenPrefEditor.putString("woolblankets", String.valueOf(woolblankets + oldwoolblankets));
+                currenPrefEditor.putString("barrillapasta", String.valueOf(barrillapasta + oldbarrillapasta));
+                currenPrefEditor.putString("renovation", String.valueOf(renovation + oldrenovation));
+                currenPrefEditor.apply();
+
+                        Toast notLongError = Toast.makeText(this, String.valueOf(String.valueOf(beans + oldbeans)), Toast.LENGTH_LONG);
+                        notLongError.show();
+
+            }
+
+            if(retrievecart.getExtras().get("Shelter").equals("Good Shepard")){
+
+
+                woolblankets = Integer.valueOf(retrievecart.getExtras().getString("woolblankets"));
+                barrillapasta = Integer.valueOf(retrievecart.getExtras().getString("barrillapasta"));
+                delmontebanana = Integer.valueOf(retrievecart.getExtras().getString("delmontebanana"));
+                oralbtoothbrushes = Integer.valueOf(retrievecart.getExtras().getString("oralbtoothbrushes"));
+
+
+                int oldwoolblankets = Integer.valueOf(currentPrefs.getString("woolblankets","nobeans"));
+                int oldbarrillapasta = Integer.valueOf(currentPrefs.getString("barrillapasta","nobeans"));
+                int olddemontebanana = Integer.valueOf(currentPrefs.getString("delmontebanana","nobeans"));
+                int oldoralbtoothbrushes = Integer.valueOf(currentPrefs.getString("oralbtoothbrushes","nobeans"));
+
+
+                currenPrefEditor.putString("woolblankets", String.valueOf(woolblankets + oldwoolblankets));
+                currenPrefEditor.putString("barrillapasta", String.valueOf(barrillapasta + oldbarrillapasta));
+                currenPrefEditor.putString("renovation", String.valueOf(oralbtoothbrushes + oldoralbtoothbrushes));
+                currenPrefEditor.putString("delmontebananas", String.valueOf(delmontebanana + olddemontebanana));
+                currenPrefEditor.apply();
+
+            }
+
+
+//            currentLat = Double.parseDouble(retrieveLatLng.getExtras().getString("Lat"));
+//            currentLng = Double.parseDouble(retrieveLatLng.getExtras().getString("Lng"));
+//            userEmail = retrieveLatLng.getExtras().getString("userEmail");
+//
+//            currenPrefEditor.putString("currentLat", String.valueOf(currentLat));
+//            currenPrefEditor.putString("currentLng", String.valueOf(currentLng));
+//            currenPrefEditor.apply();
+//            currentLatLng = new LatLng(currentLat, currentLng);
+//            // currenPrefEditor.commit();
+        }
+        else{
+            currenPrefEditor.putString("woolblankets", String.valueOf("0"));
+            currenPrefEditor.putString("barrillapasta", String.valueOf("0"));
+            currenPrefEditor.putString("renovation", String.valueOf("0"));
+            currenPrefEditor.putString("delmontebananas", String.valueOf("0"));
+            currenPrefEditor.putString("beans", String.valueOf("0"));
+            currenPrefEditor.putString("oldoralbtoothbrushes", String.valueOf("0"));
+            currenPrefEditor.apply();
+
+            Toast notLongError = Toast.makeText(getApplicationContext(), "Loaded new Cart", Toast.LENGTH_SHORT);
+            notLongError.show();
+           // currentLatLng = new LatLng(currentLat, currentLng);
+        }
 
 
 
@@ -137,9 +228,19 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
             @Override
             public void onInfoWindowClick(Marker marker) {
 
-                Intent goToNewPin = new Intent(MapsView.this, ListView.class);
-                goToNewPin.putExtra("Shelter", ((Shelter) marker.getTag()).getName());
-                startActivity(goToNewPin);
+                if(((Shelter) marker.getTag()).getName().equals("Mission Services of Hamilton")){
+                    Intent goToNewPin = new Intent(MapsView.this, ListView.class);
+                    goToNewPin.putExtra("Shelter", ((Shelter) marker.getTag()).getName());
+                    startActivity(goToNewPin);
+                }
+
+                if(((Shelter) marker.getTag()).getName().equals("Good Sheppard")){
+                    Intent goToNewPin = new Intent(MapsView.this, viewList2.class);
+                    goToNewPin.putExtra("Shelter", ((Shelter) marker.getTag()).getName());
+                    startActivity(goToNewPin);
+                }
+
+
 
 
 

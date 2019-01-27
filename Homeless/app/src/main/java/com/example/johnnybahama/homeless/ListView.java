@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,11 @@ public class ListView extends AppCompatActivity {
         checkout = findViewById(R.id.imageView13);
         profile = findViewById(R.id.imageView9);
 
+        final TextView q1 = findViewById(R.id.q1);
+        final TextView q2 = findViewById(R.id.q2);
+        final TextView q3 = findViewById(R.id.q3);
+        final TextView q4 = findViewById(R.id.q4);
+
         returnButton = findViewById(R.id.registerButton);
 
         final ImageView returnButton = findViewById(R.id.returnButton);
@@ -45,6 +51,21 @@ public class ListView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(ListView.this, MapView.class);
+                ListView.this.startActivity(myIntent);
+            }
+        });
+
+        final Button addtocart = findViewById(R.id.addtocart);
+        addtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(ListView.this, MapView.class);
+                myIntent.putExtra("beans", q1.getText());
+                myIntent.putExtra("barrillapasta", q2.getText());
+                myIntent.putExtra("woolblankets", q3.getText());
+                myIntent.putExtra("renovation", q4.getText());
+
+
                 ListView.this.startActivity(myIntent);
             }
         });
@@ -64,10 +85,10 @@ public class ListView extends AppCompatActivity {
             }
         });
 
-        Intent retrieveEmail= getIntent();
-        String shelterName = retrieveEmail.getStringExtra("Shelter");
-        Toast notLongError = Toast.makeText(this, shelterName, Toast.LENGTH_LONG);
-        notLongError.show();
+//        Intent retrieveEmail= getIntent();
+//        String shelterName = retrieveEmail.getStringExtra("Shelter");
+//        Toast notLongError = Toast.makeText(this, shelterName, Toast.LENGTH_LONG);
+//        notLongError.show();
 //        final TextView name1 = findViewById(R.id.name1);
 //
 //        final TextView desc1 = findViewById(R.id.description1);

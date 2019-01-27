@@ -13,12 +13,34 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical"
 
-        tools:context="MapsView">
+        tools:context="MapsView"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="439dp"
             android:layout_height="645dp">
+
+            <Button
+                android:id="@+id/addtocart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="64dp"
+                android:background="@drawable/button_style"
+                android:fontFamily="sans-serif-light"
+                android:text="Add to Cart"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.381"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_password"
+                app:layout_constraintVertical_bias="0.259" />
 
             <ImageView
                 android:id="@+id/returnButton"
@@ -32,9 +54,7 @@
                 app:srcCompat="@drawable/return_arrow_clipart" />
 
             <TextView
-
                 android:id="@+id/name4"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -43,13 +63,11 @@
                 android:fontFamily="sans-serif-light"
                 android:text="Goal: Fund Rennovation"
                 android:textSize="20sp"
-
                 app:layout_constraintStart_toEndOf="@+id/goalClipart"
                 app:layout_constraintTop_toBottomOf="@+id/name3" />
 
-
             <ImageView
-                android:id="@+id/bananaClipart"
+                android:id="@+id/goalClipart"
                 android:layout_width="37dp"
                 android:layout_height="42dp"
                 android:layout_marginStart="10dp"
@@ -60,7 +78,7 @@
                 app:srcCompat="@drawable/goal_clipart" />
 
             <TextView
-                android:id="@+id/bananaCost"
+                android:id="@+id/goalCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -68,24 +86,22 @@
                 android:text="$232 / $1,000 Target"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
-
                 app:layout_constraintStart_toEndOf="@+id/goalClipart"
                 app:layout_constraintTop_toBottomOf="@+id/name4" />
 
-
             <EditText
-                android:id="@+id/goalQuantity"
+                android:id="@+id/q4"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="184dp"
-                android:layout_marginLeft="184dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Quantity ($)"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/companyName"
-                app:layout_constraintTop_toBottomOf="@+id/woolBlanketQuantity" />
+                app:layout_constraintTop_toBottomOf="@+id/q3" />
 
             <ListView
                 android:id="@+id/goalDivider"
@@ -94,33 +110,22 @@
                 android:layout_marginTop="5dp"
                 android:background="#d3d3d3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bananaCost" />
+                app:layout_constraintTop_toBottomOf="@+id/goalCost" />
 
             <TextView
                 android:id="@+id/companyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="96dp"
-                android:layout_marginLeft="96dp"
-                android:layout_marginTop="84dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="88dp"
                 android:fontFamily="sans-serif-light"
-                android:text="Salvation Army"
+                android:text="Mission Services"
                 android:textColor="#000000"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/salvationArmyLogo"
-                android:layout_width="61dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="88dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/salvation_army_clipart" />
 
             <ListView
                 android:id="@+id/topDivider"
@@ -128,13 +133,11 @@
                 android:layout_height="1dp"
                 android:layout_marginBottom="5dp"
                 android:background="#d3d3d3"
-
                 app:layout_constraintBottom_toTopOf="@+id/name1"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/name1"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -143,23 +146,21 @@
                 android:fontFamily="sans-serif-light"
                 android:text="Heinz Black Beans"
                 android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/toothbrushClipart"
+                app:layout_constraintStart_toEndOf="@+id/beansClipart"
                 app:layout_constraintTop_toBottomOf="@+id/companyName" />
 
             <ImageView
-                android:id="@+id/toothbrushClipart"
+                android:id="@+id/beansClipart"
                 android:layout_width="37dp"
                 android:layout_height="42dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toTopOf="@+id/name1"
                 app:srcCompat="@drawable/heinz_beans_clipart" />
 
             <TextView
                 android:id="@+id/description1"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -167,17 +168,15 @@
                 android:text="$2.49 (27 Needed)"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
-
                 app:layout_constraintStart_toEndOf="@+id/beansClipart"
                 app:layout_constraintTop_toBottomOf="@+id/name1" />
 
-
             <EditText
-                android:id="@+id/beansQuantity"
+                android:id="@+id/q1"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="184dp"
-                android:layout_marginLeft="184dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginLeft="240dp"
                 android:layout_marginTop="80dp"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -193,9 +192,7 @@
                 android:layout_marginTop="5dp"
                 android:background="#d3d3d3"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toBottomOf="@+id/description1" />
-
 
             <TextView
                 android:id="@+id/name2"
@@ -209,7 +206,6 @@
                 app:layout_constraintStart_toEndOf="@+id/barillaPastaClipart"
                 app:layout_constraintTop_toBottomOf="@+id/name1" />
 
-
             <ImageView
                 android:id="@+id/barillaPastaClipart"
                 android:layout_width="37dp"
@@ -218,7 +214,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toothbrushClipart"
+                app:layout_constraintTop_toBottomOf="@+id/beansClipart"
                 app:srcCompat="@drawable/barilla_pasta_clipart" />
 
             <TextView
@@ -234,18 +230,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/name2" />
 
             <EditText
-                android:id="@+id/pastaQuantity"
+                android:id="@+id/q2"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="184dp"
-                android:layout_marginLeft="184dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginLeft="240dp"
                 android:layout_marginTop="28dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Quantity (#)"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/companyName"
-                app:layout_constraintTop_toBottomOf="@+id/beansQuantity" />
+                app:layout_constraintTop_toBottomOf="@+id/q1" />
 
             <ListView
                 android:id="@+id/pastaDivider"
@@ -260,8 +256,8 @@
                 android:id="@+id/companyRequests"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
-                android:layout_marginLeft="72dp"
+                android:layout_marginStart="110dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="4dp"
                 android:text="Requests:"
                 android:textSize="20sp"
@@ -305,18 +301,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/name3" />
 
             <EditText
-                android:id="@+id/woolBlanketQuantity"
+                android:id="@+id/q3"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="184dp"
-                android:layout_marginLeft="184dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="24dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Quantity (#)"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/companyName"
-                app:layout_constraintTop_toBottomOf="@+id/pastaQuantity" />
+                app:layout_constraintTop_toBottomOf="@+id/q2" />
 
             <ListView
                 android:id="@+id/blanketDivider"

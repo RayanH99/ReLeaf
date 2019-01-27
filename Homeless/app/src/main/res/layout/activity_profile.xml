@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Profile"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="131dp"
+        android:layout_height="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:srcCompat="@drawable/profile_picture_clipart" />
+
+    <TextView
+        android:id="@+id/seedCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="260dp"
+        android:fontFamily="sans-serif-light"
+        android:text="seeds"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/milestoneDivider"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#d3d3d3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seedsImage" />
+
+    <ImageView
+        android:id="@+id/seedsImage"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        app:layout_constraintBottom_toBottomOf="@+id/seedCount"
+        app:layout_constraintEnd_toEndOf="@+id/seedCount"
+        app:srcCompat="@drawable/seeds_clipart" />
+
+    <TextView
+        android:id="@+id/historyHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="history"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seedCount" />
+
+    <ImageView
+        android:id="@+id/historyImage"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        app:layout_constraintBottom_toBottomOf="@+id/historyHeading"
+        app:layout_constraintEnd_toEndOf="@+id/historyHeading"
+        app:srcCompat="@drawable/history_clipart" />
+
+    <ListView
+        android:id="@+id/historyDivider"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#d3d3d3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyHeading" />
+
+    <TextView
+        android:id="@+id/paymentHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="payment methods"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyHeading" />
+
+    <ImageView
+        android:id="@+id/paymentImage"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="257dp"
+        android:layout_marginRight="257dp"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentHeading"
+        app:layout_constraintEnd_toEndOf="@+id/paymentHeading"
+        app:srcCompat="@drawable/payment_clipart" />
+
+    <ListView
+        android:id="@+id/paymentDivider"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#d3d3d3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentHeading" />
+
+    <TextView
+        android:id="@+id/notificationHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="notifications"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentHeading" />
+
+    <ImageView
+        android:id="@+id/notificationImage"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginRight="181dp"
+        app:layout_constraintBottom_toBottomOf="@+id/notificationHeading"
+        app:layout_constraintEnd_toEndOf="@+id/notificationHeading"
+        app:srcCompat="@drawable/notifications_clipart" />
+
+    <ListView
+        android:id="@+id/notificationDivider"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#d3d3d3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationHeading" />
+
+    <TextView
+        android:id="@+id/settingsHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="settings"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationHeading" />
+
+    <ImageView
+        android:id="@+id/settingsImage"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginRight="123dp"
+        app:layout_constraintBottom_toBottomOf="@+id/settingsHeading"
+        app:layout_constraintEnd_toEndOf="@+id/settingsHeading"
+        app:srcCompat="@drawable/settings_clipart" />
+
+    <ListView
+        android:id="@+id/settingsDivider"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#d3d3d3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsHeading" />
+
+    <TextView
+        android:id="@+id/socialHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="social media"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsHeading" />
+
+    <ImageView
+        android:id="@+id/socialImage"
+        android:layout_width="37dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginRight="183dp"
+        app:layout_constraintBottom_toBottomOf="@+id/socialHeading"
+        app:layout_constraintEnd_toEndOf="@+id/socialHeading"
+        app:srcCompat="@drawable/social_clipart" />
+
+    <ListView
+        android:id="@+id/socialDivider"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#d3d3d3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/socialHeading" />
+
+</android.support.constraint.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListView">
+    tools:context=".viewList2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="sans-serif-light"
-                android:text="Goal: Fund Rennovation"
+                android:text="Del Monte Banana"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/bananaClipart"
                 app:layout_constraintTop_toBottomOf="@+id/woolBlanketEntry" />
@@ -41,7 +41,7 @@
                 android:layout_marginTop="25dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/woolBlanketsClipart"
-                app:srcCompat="@drawable/goal_clipart" />
+                app:srcCompat="@drawable/banana_clipart" />
 
             <TextView
                 android:id="@+id/bananaCost"
@@ -49,14 +49,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="$232 / $1,000 Target"
+                android:text="$3.47 (22 Needed)"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/bananaClipart"
                 app:layout_constraintTop_toBottomOf="@+id/bananaEntry" />
 
             <EditText
-                android:id="@+id/goalQuantity"
+                android:id="@+id/bananaQuantity"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="204dp"
@@ -64,13 +64,13 @@
                 android:layout_marginTop="24dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Quantity ($)"
+                android:text="Quantity (#)"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="@+id/companyName"
                 app:layout_constraintTop_toBottomOf="@+id/woolBlanketQuantity" />
 
             <ListView
-                android:id="@+id/goalDivider"
+                android:id="@+id/bananaDivider"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:layout_marginTop="5dp"
@@ -121,7 +121,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="70dp"
                 android:fontFamily="sans-serif-light"
-                android:text="Heinz Black Beans"
+                android:text="Oral B Toothbrushes"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/toothbrushClipart"
                 app:layout_constraintTop_toBottomOf="@+id/companyName" />
@@ -134,7 +134,7 @@
                 android:layout_marginLeft="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/toothbrushEntry"
-                app:srcCompat="@drawable/heinz_beans_clipart" />
+                app:srcCompat="@drawable/toothbrush_clipart" />
 
             <TextView
                 android:id="@+id/toothbrushCosts"
@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="$2.49 (27 Needed)"
+                android:text="$1.77 (13 Needed)"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/toothbrushClipart"
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="$1.77 (23 Needed)"
+                android:text="$1.77 (17 Needed)"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/barillaPastaClipart"
@@ -271,7 +271,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="$22.99 (07 Needed)"
+                android:text="$22.99 (20 Needed)"
                 android:textColor="#0000cd"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/woolBlanketsClipart"

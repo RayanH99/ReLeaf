@@ -121,7 +121,6 @@ public class MapFunctions {
                     @Override
 
                     public void onDataChange(DataSnapshot dataSnapshot) {
-//                        Toast notLongError = Toast.makeText(currentContext, "Just double dookied ", Toast.LENGTH_LONG);
 //                        notLongError.show();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 

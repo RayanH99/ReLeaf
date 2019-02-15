@@ -205,7 +205,6 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
         LatLng sydney = new LatLng(-34, 151);
         currentLatLng = new LatLng(43.260867,-79.922871);
         mMap.setInfoWindowAdapter(customInfoWindow);
-        ass = new Shelter(43.260827,-79.922891, "Stupid penis foundation", 2, "go fuk ya self");
 
 
         MapFunctions.loadShelters(mMap,currentLatLng.latitude, currentLatLng.longitude,customInfoWindow,this);

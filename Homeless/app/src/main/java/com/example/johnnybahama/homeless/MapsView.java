@@ -30,7 +30,6 @@ public class MapsView extends FragmentActivity implements OnMapReadyCallback {
     private Marker shelter1;
     private Marker shelter2;
     private Marker shelter3;
-    private Shelter ass;
     private ImageView checkout;
     private ImageView profile;
     private Context currentContext = this;

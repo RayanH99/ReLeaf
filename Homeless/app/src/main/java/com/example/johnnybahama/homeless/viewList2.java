@@ -52,8 +52,6 @@ public class viewList2 extends AppCompatActivity {
                 //     goToNewPin.putExtra("Shelter", ((Shelter) marker.getTag()).getName());
                 startActivity(goToNewPin);
 
-//                Toast notLongError = Toast.makeText(currentContext, "Just shitted", Toast.LENGTH_LONG);
-//                notLongError.show();
 
             }
         });

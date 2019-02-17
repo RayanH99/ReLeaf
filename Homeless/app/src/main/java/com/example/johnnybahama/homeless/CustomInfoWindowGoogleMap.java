@@ -39,11 +39,7 @@ public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter {
         likes_tv.setText(marker.getSnippet());
 
         Shelter infoPin = (Shelter) marker.getTag();
-      //  String date = "POOPPPEEEEEDOOOPOEEE";
-//
-//        int imageId = context.getResources().getIdentifier(infoPin.getImage().toLowerCase(),
-//                "drawable", context.getPackageName());
-//        img.setImageResource(imageId);
+
 
         details_tv.setText("");
         date_tv.setText("Number of donators is " + infoPin.getNumPosts());
